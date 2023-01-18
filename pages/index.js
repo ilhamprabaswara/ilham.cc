@@ -1,11 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
 import Layout from '@/components/layout'
 import NavBar from '@/components/navbar'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -19,7 +14,10 @@ export default function Home() {
       <Layout>
         <NavBar />
         <main>
-          <h1>Home</h1>
+          <img className='mb-[25px] rounded' src='/ilham-avatar-large.png' />
+          <p className='text-xl text-neutral-900 leading-normal'>Hi! I’m <span className='font-semibold'>Ilham</span>. — a designer and developer based in Indonesia.</p>
+          <p className='text-lg text-neutral-500 leading-normal'>I started as a visual designer, but now I do a mix of everything from developing web to running e-commerce stores.</p>
+          <p className='text-lg text-neutral-500 leading-normal'>Technology that I use for frontend development is React.js, Next.js, Node.js, and any modern CSS framework & UI component.</p>
         </main>
       </Layout>
     </>
