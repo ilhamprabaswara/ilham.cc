@@ -14,6 +14,9 @@ export default function Post({ postData }) {
                 <div className="font-medium tracking-[1px] text-[11px] text-slate-400 uppercase">
                     <Date dateString={postData.date} />
                 </div>
+                <figure>
+                    <img className="rounded" src={`/img/${postData.slug}.png`}/>
+                </figure>
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </article>
         </Layout>
