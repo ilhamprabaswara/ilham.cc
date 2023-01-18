@@ -2,7 +2,7 @@
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 date: '2020-01-02'
 author: 'Ilham Prabaswara'
-img: '/img/csr-ssr.png'
+img: '/img/ssg-ssr.png'
 excerpt: 'Things that you should know about Static Site Generation vs Server Side Rendering in web application'
 ---
 
