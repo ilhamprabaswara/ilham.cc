@@ -2,7 +2,7 @@
 title: 'Two Forms of Pre-rendering'
 date: '2020-01-01'
 author: 'Ilham Prabaswara'
-img: ''
+img: '/img/csr-ssr.png'
 excerpt: 'Types of pre-rendering on a web applications'
 ---
 
