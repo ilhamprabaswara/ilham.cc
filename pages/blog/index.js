@@ -8,7 +8,7 @@ export default function Blog({ allPostsData }) {
         <Layout>
             <NavBar />
             <div className="grid gap-10">
-                {allPostsData.map(({ date, img, slug, title }) => (
+                {allPostsData.map(({ date, excerpt, img, slug, title }) => (
                     <>
                         <article id={slug}>
                             <img className="rounded mb-[10px]" src={img} />
@@ -17,7 +17,7 @@ export default function Blog({ allPostsData }) {
                             </h2>
                             <div>
                                 <p className="text-[14px] text-neutral-500">
-                                    Updated for 2023. Collection 03 of my Lightroom presets. Each preset has been carefully customised to match the exact style…
+                                    {excerpt}
                                 </p>
                             </div>
                         </article>
