@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
-        Montserrat: ["Montserrat", "sans-serif"]
+        Montserrat: ["Montserrat", "sans-serif"],
+        Raleway: ["Raleway", "sans-serif"]
       }
     },
   },
