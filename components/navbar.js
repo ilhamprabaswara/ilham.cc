@@ -11,7 +11,7 @@ export default function NavBar() {
             <nav class="bg-white border-b border-gray-200 mb-5 py-2.5 rounded">
                 <div class="container flex flex-wrap items-center justify-between mx-auto">
                     <Link href="/" className="flex items-center">
-                        <span class="self-center text-xl font-semibold whitespace-nowrap">ilham.io</span>
+                        <span class="font-Raleway self-center text-xl font-semibold whitespace-nowrap">ilham</span>
                     </Link>
                     <button onClick={handleHidden} data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
