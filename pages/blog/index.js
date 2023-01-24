@@ -16,9 +16,7 @@ export default function Blog({ allPostsData }) {
                                 <Link href={`blog/${slug}`}>{`${title} ->`}</Link>
                             </h2>
                             <div>
-                                <p className="text-[14px] text-neutral-500">
-                                    {excerpt}
-                                </p>
+                                <p className="text-[14px] text-slate-600">{excerpt}</p>
                             </div>
                         </article>
                     </>

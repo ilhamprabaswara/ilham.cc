@@ -15,9 +15,9 @@ export default function Home() {
         <NavBar />
         <main>
           <img className='mb-[25px] rounded' src='/ilham-avatar-large.png' />
-          <p className='text-xl text-neutral-900 leading-normal'>Hi! I’m <span className='font-semibold'>Ilham</span>. — a designer and developer based in Indonesia.</p>
-          <p className='text-lg text-neutral-500 leading-normal'>I started as a visual designer, but now I do a mix of everything from developing web to running e-commerce stores.</p>
-          <p className='text-lg text-neutral-500 leading-normal'>Technology that I use for frontend development is React.js, Next.js, Node.js, and any modern CSS framework & UI component.</p>
+          <p className='text-xl text-slate-900 leading-normal'>Hi! I’m <span className='font-semibold'>Ilham</span>. — a designer and developer based in Indonesia.</p>
+          <p className='text-lg text-slate-600 leading-normal'>I started as a visual designer, but now I do a mix of everything from developing web to running e-commerce stores.</p>
+          <p className='text-lg text-slate-600 leading-normal'>Technology that I use for frontend development is React.js, Next.js, Node.js, and any modern CSS framework & UI component.</p>
         </main>
       </Layout>
     </>
