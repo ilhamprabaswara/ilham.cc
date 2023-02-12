@@ -8,7 +8,7 @@ export default function NavBar() {
     }
     return (
         <header>
-            <nav class="bg-white border-b border-gray-200 mb-5 py-2.5">
+            <nav class="border-b border-gray-200 mb-5 py-2.5">
                 <div class="container flex flex-wrap items-center justify-between mx-auto">
                     <Link href="/" className="flex items-center">
                         <span class="font-Raleway self-center text-xl font-semibold whitespace-nowrap">ilham</span>
@@ -19,19 +19,33 @@ export default function NavBar() {
                     </button>
                     <div className={`${isHidden ? "hidden" : ""} w-full md:block md:w-auto`} id="navbar-default">
                         <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-                            <li>
-                                <a href="/blog" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0" aria-current="page">Blog</a>
-                            </li>
-                            <li>
-                                <a href="/about" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">About</a>
-                            </li>
-                            <li>
-                                <a href="/contact" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Contact</a>
-                            </li>
+                            {[
+                                ['Blog', '/blog'],
+                                ['About', '/about'],
+                                ['Contact', '/contact'],
+                            ].map(([title, url]) => (
+                                <li>
+                                    <Link className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0" href={url}>{title}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
             </nav>
+            {/* <nav className="box-border flex flex-col items-center ">
+                <div>
+                    <Link href="/">Ilham</Link>
+                </div>
+                <div className="p-[5px] bg-black/[.04] rounded-3xl">
+                    {[
+                        ['Blog', '/blog'],
+                        ['About', '/about'],
+                        ['Contact', '/contact'],
+                    ].map(([title, url]) => (
+                        <Link className="px-4" href={url}>{title}</Link>
+                    ))}
+                </div>
+            </nav> */}
         </header>
     )
 }
