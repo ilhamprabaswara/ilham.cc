@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Layout from '@/components/layout'
 import NavBar from '@/components/navbar'
+import Link from 'next/link'
+import { getSortedPostsData } from "@/lib/posts"
 
-export default function Home() {
+export default function Home({ allPostsData }) {
   return (
     <>
       <Head>
@@ -14,12 +16,39 @@ export default function Home() {
       <Layout>
         <NavBar />
         <main>
-          <img className='mb-[25px] rounded' src='/ilham-avatar-large.png' />
-          <p className='text-xl text-slate-900 leading-normal'>Hi! I’m <span className='font-semibold'>Ilham</span>. — a designer and developer based in Indonesia.</p>
-          <p className='text-lg text-slate-600 leading-normal'>I started as a visual designer, but now I do a mix of everything from developing web to running e-commerce stores.</p>
-          <p className='text-lg text-slate-600 leading-normal'>Technology that I use for frontend development is React.js, Next.js, Node.js, and any modern CSS framework & UI component.</p>
+          <div className='mb-[50px]'>
+            <img className='mb-[25px] rounded' src='/ilham-avatar-large.png' />
+            <p className='font-semibold text-[22px]  text-slate-900 leading-normal'>Hi! I’m Ilham — Full time nerd. I code when I'm not on my bike.</p>
+            <p className='text-[22px] text-slate-500 leading-normal'>A developer from Indonesia. I'm interested in React, Node, visual design, cycling, photography, and music.</p>
+          </div>
+          <div className='mb-5 uppercase text-[11px] tracking-[2px] font-semibold'>Blog</div>
+          <div className="grid gap-10">
+            {allPostsData.map(({ date, excerpt, img, slug, title }) => (
+              <>
+                <article id={slug}>
+                  <img className="rounded mb-[10px]" src={img} />
+                  <h2 className="mb-[5px] text-xl">
+                    <Link href={`blog/${slug}`}>{`${title} ->`}</Link>
+                  </h2>
+                  <div>
+                    <p className="text-[14px] text-slate-600">{excerpt}</p>
+                  </div>
+                </article>
+              </>
+            ))}
+          </div>
         </main>
+
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData
+    }
+  }
 }
