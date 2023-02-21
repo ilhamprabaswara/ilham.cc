@@ -38,7 +38,6 @@ export default function Home({ allPostsData }) {
             ))}
           </div>
         </main>
-
       </Layout>
     </>
   )
