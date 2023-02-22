@@ -2,7 +2,7 @@ import Layout from "@/components/layout"
 import NavBar from "@/components/navbar"
 import useSWR from "swr"
 
-export default function Contact() {
+export default function Spotify() {
     const fetcher = (url) => fetch(url).then((r) => r.json());
     const { data: nowPlaying } = useSWR('/api/now-playing', fetcher);
     const { data: recentlyPlayed } = useSWR('/api/recently-played', fetcher);
