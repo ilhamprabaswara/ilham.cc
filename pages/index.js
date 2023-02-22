@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Layout from '@/components/layout'
 import NavBar from '@/components/navbar'
+import NowPlaying from '@/components/nowPlaying'
 import Link from 'next/link'
 import { getSortedPostsData } from "@/lib/posts"
 
@@ -22,7 +23,7 @@ export default function Home({ allPostsData }) {
             <p className='text-[22px] text-slate-500 leading-normal'>A developer from Indonesia. I'm interested in React, Node, visual design, cycling, photography, and music.</p>
           </div>
           <div className='mb-5 uppercase text-[11px] tracking-[2px] font-semibold'>Blog</div>
-          <div className="grid gap-10">
+          <div className="grid gap-10 mb-10">
             {allPostsData.map(({ date, excerpt, img, slug, title }) => (
               <>
                 <article id={slug}>
@@ -37,6 +38,7 @@ export default function Home({ allPostsData }) {
               </>
             ))}
           </div>
+          <NowPlaying />
         </main>
       </Layout>
     </>
