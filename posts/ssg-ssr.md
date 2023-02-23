@@ -2,7 +2,7 @@
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 date: '2020-01-02'
 author: 'Ilham Prabaswara'
-img: '/img/ssg-ssr.png'
+img: '/img/blog-post/ssg-ssr.png'
 excerpt: 'We recommend using Static Generation (with and without data) whenever possible.'
 ---
 
