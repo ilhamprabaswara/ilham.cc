@@ -7,14 +7,13 @@ mapboxgl.accessToken =
 
 
 const Map = (props) => {
-    console.log(props.coordinate)
     const mapContainerRef = useRef(null);
 
     // Initialize map when component mounts
     useEffect(() => {
         const map = new mapboxgl.Map({
             container: mapContainerRef.current,
-            style: 'mapbox://styles/mapbox/streets-v11',
+            style: 'mapbox://styles/mapbox/streets-v12',
         });
 
         map.on('load', () => {
@@ -79,7 +78,7 @@ const Map = (props) => {
         return () => map.remove();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     return (
-        <div className='rounded-r-lg rounded-l-lg mb-5 map-container' ref={mapContainerRef} />
+        <div className='mb-5 h-[300px]' ref={mapContainerRef} />
     );
 };
 
