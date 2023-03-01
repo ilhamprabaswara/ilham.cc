@@ -52,10 +52,10 @@ export default function StravaActivities() {
 
     return (
         data.activities.slice(0, 5).map((activity) => (
-            <div key={activity.id} className="mb-5 pb-6 overflow-hidden block max-w-sm bg-white border border-gray-200 rounded-lg shadow text-center">
+            <div key={activity.id} className="mb-5 py-6 overflow-hidden block max-w-sm bg-white border border-gray-200 rounded-lg shadow text-center">
+                <h5 className="text-left ml-6 text-2xl font-bold tracking-tight text-gray-900">{activity.name}</h5>
+                <p className="text-left ml-6 text-slate-400 text-sm mb-5">{activity.start_date.substring(0, 10)}</p>
                 <Map coordinate={decode(activity.map.summary_polyline, 100000)} />
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900">{activity.name}</h5>
-                <p className="text-slate-400 text-sm mb-5">{activity.start_date.substring(0, 10)}</p>
                 <h5 className=" text-xl font-bold tracking-tight text-gray-900">{`${(activity.distance / 1000).toFixed(2)} km`}</h5>
                 <p className="text-slate-400 text-sm mb-5">DISTANCE</p>
                 <h5 className="text-xl font-bold tracking-tight text-gray-900">{secondsToHms(activity.moving_time)}</h5>
