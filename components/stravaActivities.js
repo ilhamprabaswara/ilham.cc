@@ -49,10 +49,9 @@ export default function StravaActivities() {
     if (error) return <div>Failed to load users</div>
     if (isLoading) return <div>Loading...</div>
     if (!data) return null
-    const newArr = [data.activities]
-    console.log(newArr)
+   
     return (
-        newArr.slice(0, 5).map((activity) => (
+        data.activities.slice(0, 5).map((activity) => (
             <div key={activity.id} className="mb-5 pb-6 block max-w-sm bg-white border border-gray-200 rounded-lg shadow text-center">
                 <Map coordinate={decode(activity.map.summary_polyline, 100000)} />
                 <h5 className="mb-5 text-2xl font-bold tracking-tight text-gray-900">{activity.name}</h5>
