@@ -41,8 +41,3 @@ body {
         transform: scaleY(.5);
     }
 }
-
-/* MapBox */
-.map-container {
-    height: 400px;
-}
