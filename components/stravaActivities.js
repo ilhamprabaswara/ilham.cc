@@ -50,13 +50,13 @@ export default function StravaActivities() {
     if (isLoading) return <div>Loading...</div>
     if (!data) return null
     return (
-        data.activities.slice(0,5).map((activity) => (
-            <div class="mb-5 pb-6 block max-w-sm bg-white border border-gray-200 rounded-lg shadow text-center">
+        data.activities.slice(0, 5).map((activity) => (
+            <div key={activity.id} className="mb-5 pb-6 block max-w-sm bg-white border border-gray-200 rounded-lg shadow text-center">
                 <Map coordinate={decode(activity.map.summary_polyline, 100000)} />
-                <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900">{activity.name}</h5>
-                <h5 class=" text-2xl font-bold tracking-tight text-gray-900">{`${(activity.distance / 1000).toFixed(2)} km`}</h5>
+                <h5 className="mb-5 text-2xl font-bold tracking-tight text-gray-900">{activity.name}</h5>
+                <h5 className=" text-2xl font-bold tracking-tight text-gray-900">{`${(activity.distance / 1000).toFixed(2)} km`}</h5>
                 <p className="text-slate-400 mb-5">DISTANCE</p>
-                <h5 class="text-2xl font-bold tracking-tight text-gray-900">{secondsToHms(activity.moving_time)}</h5>
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900">{secondsToHms(activity.moving_time)}</h5>
                 <p className="text-slate-400">MOVING TIME</p>
             </div>
         ))
