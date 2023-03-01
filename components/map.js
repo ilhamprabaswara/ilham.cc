@@ -55,9 +55,7 @@ const Map = (props) => {
         return () => map.remove();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     return (
-        <div>
-            <div className='map-container' ref={mapContainerRef} />
-        </div>
+        <div className='rounded-r-lg rounded-l-lg mb-5 map-container' ref={mapContainerRef} />
     );
 };
 
