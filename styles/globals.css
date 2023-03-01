@@ -43,9 +43,6 @@ body {
 }
 
 /* MapBox */
-.mapboxgl-ctrl-attrib-inner {
-    display: none !important;
-}
 .map-container {
     height: 400px;
 }
