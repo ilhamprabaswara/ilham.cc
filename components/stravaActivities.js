@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import useSWR from "swr"
 import Map from './map';
+import Date from './date';
 
 export default function StravaActivities() {
     function secondsToHms(d) {
@@ -54,7 +55,9 @@ export default function StravaActivities() {
         data.activities.slice(0, 5).map((activity) => (
             <div key={activity.id} className="mb-5 py-6 overflow-hidden block max-w-sm bg-white border border-gray-200 rounded-lg shadow text-center">
                 <h5 className="text-left ml-6 text-2xl font-bold tracking-tight text-gray-900">{activity.name}</h5>
-                <p className="text-left ml-6 text-slate-400 text-sm mb-5">{activity.start_date.substring(0, 10)}</p>
+                <div className='text-left ml-6 mb-5'>
+                    <Date dateString={activity.start_date.substring(0, 10)} />
+                </div>
                 <Map coordinate={decode(activity.map.summary_polyline, 100000)} />
                 <h5 className=" text-xl font-bold tracking-tight text-gray-900">{`${(activity.distance / 1000).toFixed(2)} km`}</h5>
                 <p className="text-slate-400 text-sm mb-5">DISTANCE</p>
