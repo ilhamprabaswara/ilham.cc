@@ -7,32 +7,47 @@ mapboxgl.accessToken =
 
 
 const Map = (props) => {
-
+    console.log(props.coordinate)
     const mapContainerRef = useRef(null);
 
-    const [lng, setLng] = useState(5);
-    const [lat, setLat] = useState(34);
-    const [zoom, setZoom] = useState(15);
     // Initialize map when component mounts
     useEffect(() => {
         const map = new mapboxgl.Map({
             container: mapContainerRef.current,
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: props.coordinate[0],
-            zoom: zoom
         });
+
         map.on('load', () => {
+            // map.addSource('route', {
+            //     'type': 'geojson',
+            //     'data': {
+            //         'type': 'Feature',
+            //         'properties': {},
+            //         'geometry': {
+            //             'type': 'LineString',
+            //             'coordinates': props.coordinate
+            //         }
+            //     }
+            // });
+
+            const geojson = {
+                'type': 'FeatureCollection',
+                'features': [
+                    {
+                        'type': 'Feature',
+                        'geometry': {
+                            'type': 'LineString',
+                            'properties': {},
+                            'coordinates': props.coordinate
+                        },
+                    }
+                ]
+            }
             map.addSource('route', {
                 'type': 'geojson',
-                'data': {
-                    'type': 'Feature',
-                    'properties': {},
-                    'geometry': {
-                        'type': 'LineString',
-                        'coordinates': props.coordinate
-                    }
-                }
-            });
+                'data': geojson
+            })
+
             map.addLayer({
                 'id': 'route',
                 'type': 'line',
@@ -46,10 +61,19 @@ const Map = (props) => {
                     'line-width': 3
                 }
             });
-            // map.fitBounds([
-            //     props.coordinate[0],
-            //     props.coordinate[1],
-            // ]);
+
+            // Center map
+            const coordinates = geojson.features[0].geometry.coordinates;
+            const bounds = new mapboxgl.LngLatBounds(
+                coordinates[0],
+                coordinates[0]
+            );
+            for (const coord of coordinates) {
+                bounds.extend(coord);
+            }
+            map.fitBounds(bounds, {
+                padding: 20
+            });
         });
         // Clean up on unmount
         return () => map.remove();
