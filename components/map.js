@@ -68,6 +68,7 @@ const Map = (props) => {
         bounds.extend(coord);
       }
       map.fitBounds(bounds, {
+        duration: 0,
         padding: 30,
       });
     });
