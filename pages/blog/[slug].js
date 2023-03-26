@@ -15,7 +15,7 @@ export default function Post({ postData }) {
                 <figure>
                     <img className="rounded" src={postData.img} />
                 </figure>
-                <div className="text-sm text-slate-600 leading-[1.6em]" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+                <div className="text-sm leading-[1.6em]" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </article>
         </Layout>
     )
