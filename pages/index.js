@@ -20,7 +20,7 @@ export default function Home({ allPostsData }) {
           <div className='mb-[50px]'>
             <img className='mb-[25px] rounded md:w-[500px]' src='/ilham-avatar-large.png' />
             <p className='font-semibold text-[22px]  text-slate-900 leading-normal'>Hi! I’m Ilham — Full time nerd.</p>
-            <p className='text-[16px] max-w-[800px] text-slate-500 leading-normal'>A front-end enthusiast from Indonesia. I'm interested in React, Node, visual design, cycling, photography, and music.</p>
+            <p className='text-[16px] max-w-[800px] text-slate-500 leading-normal'>A front-end enthusiast from Indonesia. I'm interested in React, Node, visual design, bikes, photography, and music.</p>
           </div>
           <div className='mb-5 uppercase text-[11px] tracking-[2px] font-semibold'>Blog</div>
           <div className="grid gap-10 mb-10 md:grid-cols-3">
