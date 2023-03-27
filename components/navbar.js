@@ -20,12 +20,12 @@ export default function NavBar() {
                     <div className={`${isHidden ? "hidden" : ""} w-full md:block md:w-auto`} id="navbar-default">
                         <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
                             {[
+                                ['Work', '/work'],
                                 ['Blog', '/blog'],
                                 ['About', '/about'],
-                                ['Work', '/work'],
                             ].map(([title, url]) => (
                                 <li key={title}>
-                                    <Link className="block font-semibold py-2 pl-3 pr-4 text-slate-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0" href={url}>{title}</Link>
+                                    <Link className="block transition font-semibold py-2 pl-3 pr-4 text-slate-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0" href={url}>{title}</Link>
                                 </li>
                             ))}
                         </ul>
