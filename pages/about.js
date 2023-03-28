@@ -16,8 +16,11 @@ export default function About() {
           />
         </div>
         <div>
-          <h1 className="text-slate-700 text-2xl font-semibold mb-6">
-            Tech. Bikes. Foods. Music.
+          <h1 className="text-slate-700 text-3xl font-semibold mb-6">
+            <mark className="leading-[0em] inline-block pb-[0.5em] bg-blue-300 pr-1">
+              {/* Tech. Bikes. Foods. Music. */}
+              Hi! I'm Ilham.
+            </mark>
           </h1>
           <p className="text-xl mb-5">
             A <span className="font-medium text-blue-600">front-end</span>{" "}
