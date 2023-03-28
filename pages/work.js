@@ -5,7 +5,10 @@ export default function Work() {
     return (
         <Layout>
             <NavBar />
-            <h1>Work</h1>
+            <h1>A selection of my work, enjoy.</h1>
+            <ul>
+                <li></li>
+            </ul>
         </Layout>
     )
 }
