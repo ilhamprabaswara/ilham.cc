@@ -7,12 +7,6 @@ import { getSortedPostsData } from "@/lib/posts"
 export default function Home({ allPostsData }) {
   return (
     <>
-      <Head>
-        <title>Ilham Prabaswara | Web Developer</title>
-        <meta name="description" content="Made with love by Ilham" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/img/favicon.ico" />
-      </Head>
       <Layout>
         <NavBar />
         <main>
