@@ -22,12 +22,11 @@ export default function About() {
               Hi! I'm Ilham.
             </mark>
           </h1>
-          <p className="text-xl mb-5">
+          <p className="text-xl mb-5 leading-[1.6em]">
             A <span className="font-medium text-blue-600">front-end</span>{" "}
             enthusiast from Indonesia. I create and build websites to
             communicate a feeling of joy and comfort that shall invite the user
-            to come back. One part here is the graphical work, but more
-            interesting is the tech stack and the implementation behind it. My
+            to come back. My
             current tech stack looks roughly like this at the moment:{" "}
             <span className="font-medium text-blue-600">
               HTML, TailwindCSS, ReactJS, JavaScript
