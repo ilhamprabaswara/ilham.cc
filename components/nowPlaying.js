@@ -13,7 +13,7 @@ export default function NowPlaying() {
     }
   };
   return (
-    <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
+    <div className="block max-w-xs p-6 bg-white border border-gray-200 rounded-lg shadow">
       <div className="mb-16">
         <svg
           width="68"
