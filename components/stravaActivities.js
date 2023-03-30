@@ -71,7 +71,7 @@ export default function StravaActivities() {
         <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5 mb-6 mx-auto"></div>
         <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4 mx-auto"></div>
         <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mx-auto"></div>
-        <span class="sr-only">Loading...</span>
+        <span className="sr-only">Loading...</span>
       </div>
     );
   if (!data) return null;
