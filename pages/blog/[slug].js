@@ -6,7 +6,6 @@ import Date from "@/components/date";
 export default function Post({ postData }) {
     return (
         <Layout>
-            <NavBar />
             <article className="prose">
                 <h1 className="font-medium mb-[10px] text-[22px]">{postData.title}</h1>
                 <div className="font-medium tracking-[1px] text-[11px] text-slate-400 uppercase">
