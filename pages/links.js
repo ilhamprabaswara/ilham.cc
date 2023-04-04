@@ -5,7 +5,6 @@ import Link from "next/link"
 export default function Links() {
     return (
         <Layout>
-            <NavBar />
             <div className="grid grid-cols-1 gap-2.5 max-w-lg mx-auto font-[Montserrat]">
                 <Link href="https://linkedin.com/in/ilhamprabaswara">
                     <div className="flex items-center justify-center h-[75px] px-[20px] rounded relative bg-[#2867B2]">
