@@ -1,7 +1,6 @@
 import Layout from "@/components/layout";
-import NavBar from "@/components/navbar";
-import NowPlaying from "@/components/nowPlaying";
-import StravaActivities from "@/components/stravaActivities";
+// import NowPlaying from "@/components/nowPlaying";
+// import StravaActivities from "@/components/stravaActivities";
 import Link from "next/link";
 
 export default function About() {
@@ -98,7 +97,7 @@ export default function About() {
           </Link>
         </div>
       </div>
-      <div className="mb-[50px] md:mb-[100px]">
+      {/* <div className="mb-[50px] md:mb-[100px]">
         <p className="mb-[30px] uppercase text-[11px] tracking-[2px] font-semibold">
           Strava
         </p>
@@ -109,7 +108,7 @@ export default function About() {
           Spotify
         </p>
         <NowPlaying />
-      </div>
+      </div> */}
     </Layout>
   );
 }
