@@ -35,7 +35,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-[10px]">
             <Link
               href="#"
-              className="group flex gap-[10px] hover:text-blue-600 transition"
+              className="group flex gap-[10px] items-center hover:text-blue-600 transition"
             >
               <svg
                 className="group-hover:fill-blue-600 transition"
@@ -51,7 +51,7 @@ export default function About() {
             </Link>
             <Link
               href="#"
-              className="group flex gap-[10px] hover:text-blue-600 transition"
+              className="group flex gap-[10px] items-center hover:text-blue-600 transition"
             >
               <svg
                 className="group-hover:fill-blue-600 transition"
@@ -67,7 +67,7 @@ export default function About() {
             </Link>
             <Link
               href="#"
-              className="group flex gap-[10px] hover:text-blue-600 transition"
+              className="group flex gap-[10px] items-center hover:text-blue-600 transition"
             >
               <svg
                 className="group-hover:fill-blue-600 transition"
