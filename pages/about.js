@@ -10,24 +10,27 @@ export default function About() {
         <div>
           <h1 className="text-slate-700 text-2xl font-semibold mb-[5px]">
             {/* <mark className="leading-[0em] inline-block pb-[0.5em] bg-blue-300 pr-1"> */}
-              {/* Tech. Bikes. Foods. Music. */}
-              Hi! I'm Ilham.
+            {/* Tech. Bikes. Foods. Music. */}
+            Hi! I'm Ilham.
             {/* </mark> */}
           </h1>
-          <p className="text-sm mb-5 leading-[1.6em]">
-            A <span className="text-blue-600">front-end</span>{" "}
-            enthusiast from Indonesia. I create and build websites to
-            communicate a feeling of joy and comfort that shall invite the user
-            to come back. My
-            current tech stack looks roughly like this at the moment:{" "}
+          <p className="text-sm mb-[10px] leading-[1.6em]">
+            A <span className="text-blue-600">front-end</span> enthusiast from
+            Indonesia. I create and build websites to communicate a feeling of
+            joy and comfort that shall invite the user to come back.{" "}
+          </p>
+          <p className="text-sm mb-[10px] leading-[1.6em]">
+            My current tech stack looks roughly like this at the moment:{" "}
             <span className="text-blue-600">
               HTML, TailwindCSS, ReactJS, JavaScript
             </span>
             , it's pretty awesome and flexible and a joy to work with. The
             development part is really important to me because I thereby
             constantly improve my skills and stay up-to-date with new methods
-            and technology. Moreover, it presents a good change to the design
-            part. I often listen to music and do sports in my free time.
+            and technology.
+          </p>
+          <p className="text-sm mb-5 leading-[1.6em]">
+            When AFK, I often listen to music and do sports.
           </p>
           <div className="grid md:grid-cols-2 gap-[10px]">
             <Link
