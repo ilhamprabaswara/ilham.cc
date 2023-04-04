@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="bg-[#1B1B1F] flex flex-col gap-7 text-[#E4E1E6] px-4 py-[50px]">
-      <h1 className="font-Raleway text-2xl font-bold">Ilham</h1>
+    <div className="bg-[#1B1B1F] flex flex-col gap-[30px] text-[#E4E1E6] px-4 py-[50px]">
+      <h1 className="font-Raleway text-3xl font-bold">Ilham</h1>
       <p className="text-sm leading-6">
         A front-end enthusiast from Indonesia. I’m interested in React, Node,
         visual design, bikes, photography, and music.
