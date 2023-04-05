@@ -6,7 +6,7 @@ export default function BlogList(props) {
       {allPostsData.map(({ date, excerpt, img, slug, title }) => (
         <article id={slug}>
           <img
-            className="rounded mb-[10px] h-[200px] w-full object-cover"
+            className="rounded mb-[10px] h-[200px] md:h-[250px] w-full object-cover"
             src={img}
           />
           <h2 className="mb-[5px] w-full text-[#1B1B1F] text-xl font-medium leading-[1.4em]">
