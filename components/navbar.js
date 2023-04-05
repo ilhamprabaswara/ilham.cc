@@ -8,7 +8,7 @@ export default function NavBar() {
   };
   return (
     <header>
-      <nav className="border-b border-[#C6C5D0] mb-5 py-[11px] text-[#45464F]">
+      <nav className="border-b border-[#C6C5D0] mb-5 py-[10px] text-[#45464F] md:mb-[50px]">
         <div className="flex flex-wrap items-center justify-between">
           <Link href="/">
             <span className="font-bold font-Raleway text-xl whitespace-nowrap">
@@ -43,7 +43,7 @@ export default function NavBar() {
             className={`${isHidden ? "hidden" : ""} w-full md:block md:w-auto`}
             id="navbar-default"
           >
-            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
+            <ul className="flex flex-col p-[15px] mt-4 border border-gray-100 rounded-lg md:flex-row md:gap-[30px] md:mt-0 md:text-sm md:font-medium md:border-0">
               {[
                 ["Work", "/work"],
                 ["Blog", "/blog"],
@@ -51,7 +51,7 @@ export default function NavBar() {
               ].map(([title, url]) => (
                 <li key={title}>
                   <Link
-                    className="block transition font-semibold py-2 pl-3 pr-4 text-slate-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0"
+                    className="block text-sm transition font-semibold py-[10px] pl-3 pr-4 text-[#45464F] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0"
                     href={url}
                   >
                     {title}
