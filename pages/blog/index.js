@@ -6,8 +6,8 @@ import { getSortedPostsData } from "@/lib/posts";
 export default function Blog({ allPostsData }) {
   return (
     <Layout>
-      <div className="grid gap-[60px] md:grid-cols-[1fr_200px]">
-        <main className="grid gap-10 md:grid-cols-2">
+      <div className="grid gap-[60px] md:grid-cols-[1fr_168px] md:gap-6">
+        <main className="grid gap-10 md:grid-cols-2 md:gap-x-6 md:gap-y-[50px]">
           <BlogList {...allPostsData} />
         </main>
         <aside className="">

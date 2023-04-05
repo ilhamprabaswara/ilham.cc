@@ -11,7 +11,7 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/img/favicon.ico" />
       </Head>
-      <div className="box-border mx-auto mb-[50px] px-4 text-[#45464F]">
+      <div className="box-border max-w-[1128px] mx-auto mb-[50px] px-4 text-[#45464F] md:px-0 md:mb-[100px]">
         <NavBar />
         {children}
       </div>

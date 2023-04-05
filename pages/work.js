@@ -8,7 +8,7 @@ export default function Work() {
       <h1 className="leading[1.4em] text-xl font-medium">
         These are some things that I’ve recently built, enjoy.
       </h1>
-      <div className="grid gap-10 mt-[30px] md:grid-cols-3">
+      <div className="grid gap-10 mt-[30px] md:grid-cols-3 md:gap-6">
         <div className="flex flex-col gap-[15px]">
           <img src="/img/work/movie-list.png" />
           <p className="font-semibold text-[#004DEB]">Featured Project</p>
