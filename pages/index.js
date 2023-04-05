@@ -15,11 +15,11 @@ export default function Home({ allPostsData }) {
               className="h-[215px] mb-2.5 object-cover rounded-lg md:h-[325px] md:w-[552px]"
               src="/ilham-avatar-large.png"
             />
-            <p className="font-semibold text-xl text-[#1B1B1F] leading-[1.4em]">
+            <p className="font-semibold text-xl text-[#1B1B1F] leading-[1.4em] md:text-2xl md:mb-[5px]">
               Hi! I’m Ilham — Full time nerd.
             </p>
-            <p className="text-[14px] max-w-[800px] leading-[1.6em]">
-              A front-end enthusiast from Indonesia. I'm interested in React,
+            <p className="text-[14px] max-w-[800px] leading-[1.6em] md:text-base">
+              A front-end enthusiast from Indonesia. Interested in React,
               Node, visual design, bikes, photography, and music.
             </p>
           </div>
