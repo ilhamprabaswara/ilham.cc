@@ -10,8 +10,10 @@ export default function Work() {
       </h1>
       <div className="grid gap-10 mt-[30px] md:grid-cols-3 md:gap-6">
         <div className="flex flex-col gap-[15px]">
-          <img src="/img/work/movie-list.png" />
-          <p className="font-semibold text-[#004DEB]">Featured Project</p>
+          <div className="flex flex-col gap-[10px]">
+            <img src="/img/work/movie-list.png" />
+            <p className="font-semibold text-[#004DEB]">Featured Project</p>
+          </div>
           <div>
             <h1 className="font-semibold text-[28px]">Movie List</h1>
             <p className="text-sm leading-[1.6em]">
@@ -57,8 +59,10 @@ export default function Work() {
           </div>
         </div>
         <div className="flex flex-col gap-[15px]">
-          <img src="/img/work/vakanzie.png" />
-          <p className="font-semibold text-[#004DEB]">Featured Project</p>
+          <div className="flex flex-col gap-[10px]">
+            <img className="rounded-lg" src="/img/work/vakanzie.png" />
+            <p className="font-semibold text-[#004DEB]">Featured Project</p>
+          </div>
           <div>
             <h1 className="font-semibold text-[28px]">Vakanzie</h1>
             <p className="text-sm leading-[1.6em]">
