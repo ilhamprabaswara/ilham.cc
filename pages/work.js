@@ -9,7 +9,31 @@ export default function Work() {
         These are some things that I’ve recently built, enjoy.
       </h1>
       <div className="grid gap-10 mt-[30px] md:grid-cols-3 md:gap-6">
-        <div className="flex flex-col gap-[15px]">
+        {[
+          {
+            imageSource: "/img/work/movie-list.png",
+            projectName: "FlickPicks",
+            description:
+              "Lorem ipsum dolor sit amet consectetur. Lacus ornare blandit urna ut sed. Aliquam lorem commodo augue dignissim arcu nulla tellus donec.",
+          },
+          {
+            imageSource: "/img/work/vakanzie.png",
+            projectName: "Vakanzie",
+            description:
+              "Lorem ipsum dolor sit amet consectetur. Lacus ornare blandit urna ut sed. Aliquam lorem commodo augue dignissim arcu nulla tellus donec.",
+          },
+        ].map(({ imageSource, projectName, description }) => (
+          <div className="flex flex-col gap-[15px]">
+            <div className="flex flex-col gap-[10px]">
+              <img src={imageSource} />
+              <p className="font-semibold text-[#004DEB]">Featured Project</p>
+            </div>
+            <div>
+              <h1 className="font-semibold text-[28px]">{projectName}</h1>
+            </div>
+          </div>
+        ))}
+        {/* <div className="flex flex-col gap-[15px]">
           <div className="flex flex-col gap-[10px]">
             <img src="/img/work/movie-list.png" />
             <p className="font-semibold text-[#004DEB]">Featured Project</p>
@@ -106,7 +130,7 @@ export default function Work() {
               </svg>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
