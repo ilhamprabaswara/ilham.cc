@@ -25,7 +25,7 @@ export default function Work() {
         ].map(({ imageSource, projectName, description }) => (
           <div className="flex flex-col gap-[15px]">
             <div className="flex flex-col gap-[10px]">
-              <img src={imageSource} />
+              <img className="rounded-lg" src={imageSource} />
               <p className="font-semibold text-[#004DEB]">Featured Project</p>
             </div>
             <div>
