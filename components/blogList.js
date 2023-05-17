@@ -12,7 +12,7 @@ export default function BlogList(props) {
           <h2 className="mb-[5px] w-full text-[#1B1B1F] text-xl font-medium leading-[1.4em]">
             <Link href={`blog/${slug}`}>{`${title} ->`}</Link>
           </h2>
-          <p className="text-[14px] leading-[1.6em]">{excerpt}</p>
+          {/* <p className="text-[14px] leading-[1.6em]">{excerpt}</p> */}
         </article>
       ))}
     </>
