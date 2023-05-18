@@ -12,7 +12,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/img/favicon.ico" />
       </Head>
       <NavBar />
-      <div className="box-border max-w-[1128px] mx-auto mb-[50px] px-4 text-[#45464F] md:px-0 md:mb-[100px]">
+      <div className="box-border mx-auto mb-[50px] px-4 text-[#45464F] md:px-0 md:w-[980px] md:mb-[100px]">
         {children}
       </div>
       <Footer />
