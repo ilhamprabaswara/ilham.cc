@@ -57,7 +57,7 @@ export default function NavBar() {
               } overflow-y-auto top-[48px] left-0 h-[calc(100vh-48px)] z-[9999] w-full px-10 md:block md:h-auto md:w-auto md:bg-transparent md:p-0`}
               id="navbar-default"
             >
-              <ul className="flex flex-col mt-4 md:flex-row md:gap-[30px] md:mt-0 md:text-sm md:font-medium md:border-0">
+              <ul className="flex flex-col mt-4 md:flex-row md:gap-[30px] md:mt-0 md:text-sm md:border-0">
                 {[
                   ["About", "/about"],
                   ["Blog", "/blog"],
@@ -65,7 +65,7 @@ export default function NavBar() {
                 ].map(([title, url]) => (
                   <li key={title}>
                     <Link
-                      className="block text-[17px] leading-[25px] transition mb-[15px] text-[#45464F] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 md:mb-0 md:text-xs"
+                      className="block text-[17px] leading-[25px] transition mb-[15px] text-[#45464F] hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 md:mb-0 md:text-xs md:overflow-hidden md:leading-3"
                       href={url}
                     >
                       {title}
