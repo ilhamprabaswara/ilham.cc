@@ -4,6 +4,7 @@ date: '2022-01-10'
 author: 'Ilham Prabaswara'
 img: '/img/blog-post/welcome-personal-website.png'
 excerpt: 'Hello and welcome to my personal website!'
+categories: 'Personal'
 ---
 
 Hello and welcome to my personal website!

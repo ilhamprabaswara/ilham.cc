@@ -4,6 +4,7 @@ date: '2023-03-31'
 author: 'Ilham Prabaswara'
 img: '/img/blog-post/ssg-ssr.png'
 excerpt: 'We recommend using Static Generation (with and without data) whenever possible.'
+categories: 'Programming'
 ---
 
 In this article we are going to convert a dash or underscore delimited words into camel case using JavaScript.
