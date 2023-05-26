@@ -1,6 +1,5 @@
 import Layout from "@/components/layout";
 import NavBar from "@/components/navbar";
-import BlogList from "../components/blogList";
 import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import Date from "@/components/date";
