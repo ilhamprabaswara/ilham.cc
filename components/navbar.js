@@ -6,6 +6,11 @@ export default function NavBar() {
   const handleHidden = () => {
     setHidden(!isHidden);
   };
+  const navLink = [
+    { name: "About", url: "/about" },
+    { name: "Blog", url: "/blog" },
+    { name: "Playground", url: "/playground" },
+  ];
   return (
     <>
       <nav className="sticky min-w-[320px] top-0 left-0 w-full h-12 mb-5 md:h-[52px]">
@@ -57,7 +62,7 @@ export default function NavBar() {
               } overflow-y-auto top-[48px] left-0 h-[calc(100vh-48px)] z-[9999] w-full px-10 md:block md:h-auto md:w-auto md:bg-transparent md:p-0`}
               id="navbar-default"
             >
-              <ul className="flex flex-col mt-4 md:flex-row md:gap-[30px] md:mt-0 md:text-sm md:border-0">
+              {/* <ul className="flex flex-col mt-4 md:flex-row md:gap-[30px] md:mt-0 md:text-sm md:border-0">
                 {[
                   ["About", "/about"],
                   ["Blog", "/blog"],
@@ -71,6 +76,17 @@ export default function NavBar() {
                       {title}
                     </Link>
                   </li>
+                ))}
+              </ul> */}
+              <ul className="flex flex-col mt-4 md:flex-row md:gap-[30px] md:mt-0 md:text-sm md:border-0">
+                {navLink.map((item) => (
+                  <Link
+                    className="block text-[17px] leading-[25px] transition mb-[15px] text-[#45464F] hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 md:mb-0 md:text-xs md:overflow-hidden md:leading-3"
+                    key={item.name}
+                    href={item.url}
+                  >
+                    {item.name}
+                  </Link>
                 ))}
               </ul>
             </div>
