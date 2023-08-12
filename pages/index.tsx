@@ -1,5 +1,4 @@
 import Layout from "@/components/layout";
-import NavBar from "@/components/navbar";
 import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import Date from "@/components/date";
@@ -9,7 +8,7 @@ export default function Home({ allPostsData }) {
   return (
     <>
       <Layout>
-        <main className="w-[328.125px] mx-auto">
+        <main className="w-full mx-auto">
           <div className="mb-[50px] md:w-[648px]">
             <img
               className="h-[215px] mb-2.5 object-cover rounded-lg md:h-[325px] md:w-[552px]"
@@ -40,7 +39,9 @@ export default function Home({ allPostsData }) {
                       src={img}
                     />
                     <div className="p-6 bg-[#ffffff]">
-                      <div className="font-bold uppercase text-xs leading-4 mb-2 text-secondary60">{categories}</div>
+                      <div className="font-bold uppercase text-xs leading-4 mb-2 text-secondary60">
+                        {categories}
+                      </div>
                       <h2 className="w-full text-[#1B1B1F] text-[19px] font-bold leading-[23px] mb-2">
                         <Link href={`blog/${slug}`}>{`${title}`}</Link>
                       </h2>
