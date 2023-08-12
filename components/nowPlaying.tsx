@@ -43,7 +43,12 @@ export default function NowPlaying() {
       </div>
       <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">
         {nowPlaying?.isPlaying ? (
-          <Link className="hover:text-[#1ed760] transition" href={nowPlaying.songUrl}>{nowPlaying.title}</Link>
+          <Link
+            className="hover:text-[#1ed760] transition"
+            href={nowPlaying.songUrl}
+          >
+            {nowPlaying.title}
+          </Link>
         ) : (
           checkPlay().title
         )}

@@ -1,6 +1,5 @@
+import BlogList from "@/components/blogList";
 import Layout from "@/components/layout";
-import NavBar from "@/components/navbar";
-import BlogList from "../../components/blogList";
 import { getSortedPostsData } from "@/lib/posts";
 
 export default function Blog({ allPostsData }) {

@@ -9,8 +9,8 @@ const getAccessToken = async () => {
       client_id,
       client_secret,
       refresh_token,
-      grant_type: "refresh_token"
-    })
+      grant_type: "refresh_token",
+    }),
   });
   return response.json();
 };
@@ -19,7 +19,7 @@ export const getActivities = async () => {
   const { access_token } = await getAccessToken();
   return fetch("https://www.strava.com/api/v3/athlete/activities", {
     headers: {
-      Authorization: `Bearer ${access_token}`
+      Authorization: `Bearer ${access_token}`,
     },
   });
 };

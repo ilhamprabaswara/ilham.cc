@@ -1,10 +1,10 @@
 import Link from "next/link";
-export default function BlogList(props) {
+export default function BlogList(props: any) {
   const allPostsData = Object.values(props);
   return (
-    <>
+    <section>
       {allPostsData.map(({ date, excerpt, img, slug, title }) => (
-        <article id={slug}>
+        <article key={slug} id={slug}>
           <img
             className="rounded mb-[10px] h-[200px] md:h-[250px] w-full object-cover"
             src={img}
@@ -15,6 +15,6 @@ export default function BlogList(props) {
           {/* <p className="text-[14px] leading-[1.6em]">{excerpt}</p> */}
         </article>
       ))}
-    </>
+    </section>
   );
 }

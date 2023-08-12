@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function NavBar() {
-  const [isHidden, setHidden] = useState("false");
+  const [isHidden, setHidden] = useState<boolean>(true);
   const handleHidden = () => {
     setHidden(!isHidden);
   };
@@ -13,14 +13,14 @@ export default function NavBar() {
   ];
   return (
     <>
-      <nav className="sticky min-w-[320px] top-0 left-0 w-full h-12 mb-5 md:h-[52px]">
+      <nav className="sticky min-w-[320px] top-0 left-0 w-screen h-12 mb-5 md:h-[52px]">
         <div className="absolute top-0 left-0 w-full h-auto min-h-full z-[1]">
           <div
             className={`${
               isHidden ? "h-full" : "h-[100vh]"
-            } backdrop-blur-[20px] bg-[rgba(255,255,255,0.9)] min-h-[48px]  absolute top-0 w-full z-[1] after:bg-[rgba(0,0,0,0.16)] after:block after:h-[1px] after:absolute after:top-full after:w-[100vw]`}
+            } backdrop-blur-[20px] bg-[rgba(255,255,255,0.9)] min-h-[48px]  absolute top-0 w-full z-[1] after:bg-[rgba(0,0,0,0.16)] after:block after:h-[1px] after:absolute after:top-full after:w-screen`}
           ></div>
-          <div className="items-center h-[48px] flex flex-wrap relative justify-between px-4 z-[2] md:h-[52px] md:w-[1024px] md:mx-auto md:px-[22px]">
+          <div className="items-center h-[48px] flex flex-wrap relative justify-between px-4 z-[2] w-screen md:h-[52px] md:mx-auto md:px-[22px]">
             <Link href="/">
               <span className="font-semibold leading-6 font-Raleway text-[19px] whitespace-nowrap md:text-[21px]">
                 Ilham
@@ -43,8 +43,8 @@ export default function NavBar() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M3 8V6H21V8H3ZM3 13H21V11H3V13ZM3 18H21V16H3V18Z"
                   fill="#45464F"
                 />
