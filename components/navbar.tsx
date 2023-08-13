@@ -13,14 +13,14 @@ export default function NavBar() {
   ];
   return (
     <>
-      <nav className="sticky min-w-[320px] top-0 left-0 w-screen h-12 mb-5 md:h-[52px]">
+      <nav className="sticky min-w-[320px] top-0 left-0 h-12 mb-5 md:h-[52px] z-[9997]">
         <div className="absolute top-0 left-0 w-full h-auto min-h-full z-[1]">
           <div
             className={`${
               isHidden ? "h-full" : "h-[100vh]"
-            } backdrop-blur-[20px] bg-[rgba(255,255,255,0.9)] min-h-[48px]  absolute top-0 w-full z-[1] after:bg-[rgba(0,0,0,0.16)] after:block after:h-[1px] after:absolute after:top-full after:w-screen`}
-          ></div>
-          <div className="items-center h-[48px] flex flex-wrap relative justify-between px-4 z-[2] w-screen md:h-[52px] md:mx-auto md:px-[22px]">
+            } backdrop-blur-[20px] bg-[rgba(255,255,255,0.9)] min-h-[48px] absolute top-0 w-full z-[1] after:bg-[rgba(0,0,0,0.16)] after:block after:h-[1px] after:absolute after:top-full after:w-full`}
+          />
+          <div className="items-center max-w-[980px] h-[48px] flex flex-wrap relative justify-between px-4 md:h-[52px] md:mx-auto md:px-[22px] xl:px-0 z-[2]">
             <Link href="/">
               <span className="font-semibold leading-6 font-Raleway text-[19px] whitespace-nowrap md:text-[21px]">
                 Ilham
@@ -62,22 +62,6 @@ export default function NavBar() {
               } overflow-y-auto top-[48px] left-0 h-[calc(100vh-48px)] z-[9999] w-full px-10 md:block md:h-auto md:w-auto md:bg-transparent md:p-0`}
               id="navbar-default"
             >
-              {/* <ul className="flex flex-col mt-4 md:flex-row md:gap-[30px] md:mt-0 md:text-sm md:border-0">
-                {[
-                  ["About", "/about"],
-                  ["Blog", "/blog"],
-                  ["Playground", "/playground"],
-                ].map(([title, url]) => (
-                  <li key={title}>
-                    <Link
-                      className="block text-[17px] leading-[25px] transition mb-[15px] text-[#45464F] hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 md:mb-0 md:text-xs md:overflow-hidden md:leading-3"
-                      href={url}
-                    >
-                      {title}
-                    </Link>
-                  </li>
-                ))}
-              </ul> */}
               <ul className="flex flex-col mt-4 md:flex-row md:gap-[30px] md:mt-0 md:text-sm md:border-0">
                 {navLink.map((item) => (
                   <Link
@@ -93,20 +77,6 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-      {/* <nav className="box-border flex flex-col items-center ">
-                <div>
-                    <Link href="/">Ilham</Link>
-                </div>
-                <div className="p-[5px] bg-black/[.04] rounded-3xl">
-                    {[
-                        ['Blog', '/blog'],
-                        ['About', '/about'],
-                        ['Contact', '/contact'],
-                    ].map(([title, url]) => (
-                        <Link className="px-4" href={url}>{title}</Link>
-                    ))}
-                </div>
-            </nav> */}
     </>
   );
 }
