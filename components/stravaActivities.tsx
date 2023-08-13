@@ -68,7 +68,7 @@ export default function StravaActivities() {
           </svg>
         </div>
         <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4 mx-auto"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5 mb-6 mx-auto"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5 mx-auto"></div>
         <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4 mx-auto"></div>
         <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mx-auto"></div>
         <span className="sr-only">Loading...</span>
