@@ -1,4 +1,4 @@
-import BlogList from "@/components/blogList";
+import BlogList from "@/components/pages/blog/blogList";
 import Layout from "@/components/layout";
 import { getSortedPostsData } from "@/lib/posts";
 
