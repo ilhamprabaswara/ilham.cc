@@ -9,7 +9,7 @@ export default function Footer() {
           A front-end enthusiast from Indonesia. I’m interested in React, Node,
           visual design, bikes, photography, and music.
         </p>
-        <div className="flex gap-5">
+        <div className="flex flex-wrap gap-5">
           <Link href="https://linkedin.com/in/ilhamprabaswara">
             <svg
               width="35"
