@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Date from "../../date";
-export default function BlogList({ categories, date, img, slug, title }) {
+export default function BlogList({
+  categories,
+  date,
+  img,
+  slug,
+  title,
+}: PostsDataTypes) {
   return (
     <li role="listitem" className="mt-6 first:mt-0 basis-full relative">
       <Link
