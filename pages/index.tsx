@@ -4,8 +4,11 @@ import BlogList from "@/components/pages/blog/blogList";
 import HeroSection from "@/components/pages/home/heroSection";
 import BlogSection from "@/components/pages/home/blogSection";
 
-export default function Home({ allPostsData }) {
-  console.log(window.location.toString() + `?`);
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: PostsDataTypes[];
+}) {
   allPostsData = allPostsData.slice(0, 3);
   return (
     <>
