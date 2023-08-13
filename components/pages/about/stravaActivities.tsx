@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useSWR from "swr";
-import Map from "./map";
-import Date from "./date";
+import Map from "../../map";
+import Date from "../../date";
+import StravaPopUp from "./stravaPopUp";
+import { useRouter } from "next/router";
 
 export default function StravaActivities() {
+  const router = useRouter();
+  const id = useRouter()?.query?.id;
+  useEffect(() => {
+    if (id !== undefined) {
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = "17px";
+    } else {
+      document.body.style.overflow = "scroll";
+      document.body.style.paddingRight = "0";
+    }
+  }, [id]);
   function secondsToHms(d) {
     d = Number(d);
     var h = Math.floor(d / 3600);
@@ -77,29 +90,52 @@ export default function StravaActivities() {
   if (!data) return null;
 
   return (
-    <div className="grid md:grid-cols-3 md:gap-3">
-      {data.activities.slice(0, 6).map((activity) => (
-        <div
-          key={activity.id}
-          className="mb-5 py-6 overflow-hidden block max-w-sm bg-[#FFFFFF] rounded-lg shadow text-center"
-        >
-          <h5 className="text-left ml-6 text-2xl font-bold tracking-tight text-gray-900">
-            {activity.name}
-          </h5>
-          <div className="text-left ml-6 mb-5">
-            <Date dateString={activity.start_date.substring(0, 10)} />
-          </div>
-          <Map coordinate={decode(activity.map.summary_polyline, 100000)} />
-          <h5 className=" text-xl font-bold tracking-tight text-gray-900">{`${(
-            activity.distance / 1000
-          ).toFixed(2)} km`}</h5>
-          <p className="text-slate-400 text-sm mb-5">DISTANCE</p>
-          <h5 className="text-xl font-bold tracking-tight text-gray-900">
-            {secondsToHms(activity.moving_time)}
-          </h5>
-          <p className="text-slate-400 text-sm">MOVING TIME</p>
+    <>
+      <section>
+        <h2 className="font-semibold text-[11px] leading-[1.6em] tracking-[2px] uppercase mb-5">
+          Strava
+        </h2>
+        <div className="grid md:grid-cols-3 md:gap-3">
+          {data.activities.slice(0, 6).map((activity) => (
+            <button
+              key={activity.id}
+              onClick={() =>
+                // setShowModal(true)
+                router.push(
+                  {
+                    query: { ...router.query, id: activity.id },
+                  },
+                  undefined,
+                  { scroll: false }
+                )
+              }
+            >
+              <div className="mb-5 py-6 overflow-hidden block max-w-sm bg-[#FFFFFF] rounded-xl shadow text-center">
+                <h5 className="text-left ml-6 text-2xl font-bold tracking-tight text-gray-900">
+                  {activity.name}
+                </h5>
+                <div className="text-left ml-6 mb-5">
+                  <Date dateString={activity.start_date.substring(0, 10)} />
+                </div>
+                <Map
+                  coordinate={decode(activity.map.summary_polyline, 100000)}
+                />
+                <div className="px-4">
+                  <h5 className=" text-xl font-bold tracking-tight text-gray-900">{`${(
+                    activity.distance / 1000
+                  ).toFixed(2)} km`}</h5>
+                  <p className="text-slate-400 text-sm mb-5">DISTANCE</p>
+                  <h5 className="text-xl font-bold tracking-tight text-gray-900">
+                    {secondsToHms(activity.moving_time)}
+                  </h5>
+                  <p className="text-slate-400 text-sm">MOVING TIME</p>
+                </div>
+              </div>
+            </button>
+          ))}
         </div>
-      ))}
-    </div>
+      </section>
+      <StravaPopUp />
+    </>
   );
 }
