@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
+import StravaActivities from "@/components/stravaActivities";
 // import NowPlaying from "@/components/nowPlaying";
-// import StravaActivities from "@/components/stravaActivities";
 import Link from "next/link";
 
 export default function About() {
@@ -120,7 +120,7 @@ export default function About() {
       <h1 className="leading[1.4em] text-xl font-medium">
         These are some things that I’ve recently built, enjoy.
       </h1>
-      <div className="grid gap-10 mt-[30px] md:grid-cols-3 md:gap-6">
+      <div className="grid gap-10 mt-[30px] md:grid-cols-3 md:gap-6 mb-5">
         {[
           {
             imageSource: "/img/work/flickpicks.png",
@@ -186,6 +186,7 @@ export default function About() {
           </div>
         ))}
       </div>
+      <StravaActivities />
     </Layout>
   );
 }

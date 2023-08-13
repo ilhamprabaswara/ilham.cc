@@ -81,7 +81,7 @@ export default function StravaActivities() {
       {data.activities.slice(0, 6).map((activity) => (
         <div
           key={activity.id}
-          className="mb-5 py-6 overflow-hidden block max-w-sm bg-white border border-gray-200 rounded-lg shadow text-center"
+          className="mb-5 py-6 overflow-hidden block max-w-sm bg-[#FFFFFF] rounded-lg shadow text-center"
         >
           <h5 className="text-left ml-6 text-2xl font-bold tracking-tight text-gray-900">
             {activity.name}
