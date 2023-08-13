@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-import StravaActivities from "@/components/stravaActivities";
+import StravaActivities from "@/components/pages/about/stravaActivities";
 // import NowPlaying from "@/components/nowPlaying";
 import Link from "next/link";
 
