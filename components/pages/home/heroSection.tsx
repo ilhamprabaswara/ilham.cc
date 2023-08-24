@@ -6,11 +6,9 @@ const HeroSection = () => {
       <div className="mb-[50px]">
         <Image
           alt="avatar"
-          width={0}
-          height={0}
-          sizes="100vw"
           className="h-[215px] w-full mb-2.5 object-cover rounded-lg md:h-[325px] md:w-[552px]"
-          src="/ilham-avatar-large.png"
+          src="/ilham-avatar-large.webp"
+          priority={true}
         />
         <p className="font-semibold text-xl leading-[1.6em] text-[#1B1B1F] md:text-2xl md:leading-[1.6em]">
           Hi! I’m Ilham — Full time nerd.

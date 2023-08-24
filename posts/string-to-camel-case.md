@@ -2,7 +2,7 @@
 title: 'How to Convert a String to Camel Case'
 date: '2023-03-31'
 author: 'Ilham Prabaswara'
-img: '/img/blog-post/ssg-ssr.png'
+img: '/img/blog-post/ssg-ssr.webp'
 excerpt: 'We recommend using Static Generation (with and without data) whenever possible.'
 categories: 'Programming'
 ---
