@@ -4,41 +4,52 @@
 @tailwind utilities;
 
 :root {
-    --m: 17.5;
-    --wavefreq: calc(100ms * var(--m));
+  --m: 17.5;
+  --wavefreq: calc(100ms * var(--m));
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #F2F0F4;
+  font-family: 'Inter', sans-serif;
+  background-color: #f2f0f4;
 }
 
 [class*='wave'] {
-    aspect-ratio: .125/.1;
-    animation: waveform var(--wavefreq) ease-in-out infinite forwards;
-    background-color: #22c55e;
-    border-radius: 15px;
-    width: 2px;
+  aspect-ratio: 0.125/0.1;
+  animation: waveform var(--wavefreq) ease-in-out infinite forwards;
+  background-color: #22c55e;
+  border-radius: 15px;
+  width: 2px;
 }
 
 .wave1 {
-    --wavefreq: calc(200ms * var(--m));
+  --wavefreq: calc(200ms * var(--m));
 }
 
 .wave2 {
-    --wavefreq: calc(300ms * var(--m));
+  --wavefreq: calc(300ms * var(--m));
 }
 
 @keyframes waveform {
-    0% {
-        transform: scaleY(.5);
-    }
+  0% {
+    transform: scaleY(0.5);
+  }
 
-    50% {
-        transform: scaleY(.7);
-    }
+  50% {
+    transform: scaleY(0.7);
+  }
 
-    100% {
-        transform: scaleY(.5);
-    }
+  100% {
+    transform: scaleY(0.5);
+  }
+}
+
+@keyframes append-animate {
+  from {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
