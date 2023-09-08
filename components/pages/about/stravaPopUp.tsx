@@ -1,27 +1,28 @@
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import useSWR from "swr";
+import Map from '@/components/map';
+import { decodePolyline } from '@/utils/decodePolyline';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import useSWR from 'swr';
 
 export default function StravaPopUp() {
   const [currentIndex, setCurrentIndex] = useState(null);
   const fetcher = (url) => fetch(url).then((r) => r.json());
-  const { data, error, isLoading } = useSWR("/api/workout-activity", fetcher);
+  const { data, error, isLoading } = useSWR('/api/workout-activity', fetcher);
 
-  const card = useRouter()?.query?.id;
+  const cardId = useRouter()?.query?.id;
   const router = useRouter();
   const removeQuery = () => {
     const { pathname } = router;
     router.push({ pathname }, undefined, { scroll: false });
   };
-  console.log(data)
   useEffect(() => {
-    if (data && card) {
+    if (data && cardId) {
       const index = data.activities.findIndex(
-        (activity) => activity.id === Number(card)
+        (activity) => activity.id === Number(cardId)
       );
       setCurrentIndex(index !== -1 ? index : null);
     }
-  }, [data, card]);
+  }, [data, cardId]);
   useEffect(() => {
     if (currentIndex !== null) {
       router.push(
@@ -45,12 +46,20 @@ export default function StravaPopUp() {
   const currentActivity = data.activities[currentIndex];
   return (
     <>
-      {card && currentActivity && (
+      {cardId && currentActivity && (
         <div className="fixed flex items-center justify-center top-0 left-0 w-screen h-screen bg-secondary60 bg-opacity-50 z-[9999] overflow-hidden">
-          <div className="relative transition-all duration-1000 bg-[#FFFFFF] h-[200px] w-[200px]">
+          <div className="relative w-96 bg-[#FFFFFF] animate-[append-animate_.2s_linear]">
             <button onClick={removeQuery}>Close</button>
             <h1 className=" text-[#212121]">{currentActivity.name}</h1>
-            <h1 className=" text-[#212121]">{currentActivity.distance}</h1>
+            {/* <Map
+              coordinate={decodePolyline(
+                currentActivity?.map.summary_polyline,
+                100000
+              )}
+            /> */}
+            <h1 className="text-[#212121]">
+              {(currentActivity.distance / 1000).toFixed(2)} km
+            </h1>
             <button onClick={prevSlide}>Prev</button>
             <button onClick={nextSlide}>Next</button>
           </div>
