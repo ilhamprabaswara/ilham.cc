@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
-import StravaActivities from "@/components/pages/about/stravaActivities";
-// import NowPlaying from "@/components/nowPlaying";
+import { projectItems } from "@/constants/projectItems";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function About() {
@@ -11,7 +11,7 @@ export default function About() {
           <h1 className="text-slate-700 text-2xl font-semibold mb-[15px] md:text-3xl">
             {/* <mark className="leading-[0em] inline-block pb-[0.5em] bg-blue-300 pr-1"> */}
             {/* Tech. Bikes. Foods. Music. */}
-            Hi! I'm Ilham.
+            Hi! I&apos;m Ilham.
             {/* </mark> */}
           </h1>
           <div className="flex flex-col mb-[30px] gap-[10px] md:mb-[50px]">
@@ -25,7 +25,7 @@ export default function About() {
               <span className="text-blue-600">
                 HTML, TailwindCSS, ReactJS, JavaScript
               </span>
-              , it's pretty awesome and flexible and a joy to work with. The
+              , it&apos;s pretty awesome and flexible and a joy to work with. The
               development part is really important to me because I thereby
               constantly improve my skills and stay up-to-date with new methods
               and technology.
@@ -121,27 +121,10 @@ export default function About() {
         These are some things that I’ve recently built, enjoy.
       </h1>
       <div className="grid gap-10 mt-[30px] md:grid-cols-3 md:gap-6 mb-5">
-        {[
-          {
-            imageSource: "/img/work/flickpicks.png",
-            projectName: "FlickPicks",
-            description:
-              "Lorem ipsum dolor sit amet consectetur. Lacus ornare blandit urna ut sed. Aliquam lorem commodo augue dignissim arcu nulla tellus donec.",
-            github: "https://github.com/IlhamPrabaswara/flickpicks",
-            demo: "https://flickpicks.vercel.app",
-          },
-          {
-            imageSource: "/img/work/vakanzie.png",
-            projectName: "Vakanzie",
-            description:
-              "Lorem ipsum dolor sit amet consectetur. Lacus ornare blandit urna ut sed. Aliquam lorem commodo augue dignissim arcu nulla tellus donec.",
-            github: "https://github.com/IlhamPrabaswara/vakanzie",
-            demo: "https://vakanzie.vercel.app",
-          },
-        ].map(({ imageSource, projectName, description, github, demo }) => (
-          <div className="flex flex-col gap-[15px]">
+        {projectItems.map(({ imageSource, projectName, description, github, demo }, index) => (
+          <div key={index} className="flex flex-col gap-[15px]">
             <div className="flex flex-col gap-[10px]">
-              <img className="rounded-lg" src={imageSource} />
+              <Image width={311} height={208} alt="featured-project" className="rounded-lg" src={imageSource} />
               <p className="font-semibold text-[#004DEB]">Featured Project</p>
             </div>
             <div>
@@ -186,7 +169,6 @@ export default function About() {
           </div>
         ))}
       </div>
-      <StravaActivities />
     </Layout>
   );
 }
