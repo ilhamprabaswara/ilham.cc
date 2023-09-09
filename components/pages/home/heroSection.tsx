@@ -9,6 +9,8 @@ const HeroSection = () => {
           className="h-[215px] w-full mb-2.5 object-cover rounded-lg md:h-[325px] md:w-[552px]"
           src="/ilham-avatar-large.webp"
           priority={true}
+          width={552}
+          height={325}
         />
         <p className="font-semibold text-xl leading-[1.6em] text-[#1B1B1F] md:text-2xl md:leading-[1.6em]">
           Hi! I’m Ilham — Full time nerd.
