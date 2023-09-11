@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Date from "../../date";
+import Link from 'next/link';
+import Date from '../../date';
 export default function BlogList({
   categories,
   date,
@@ -8,27 +8,27 @@ export default function BlogList({
   title,
 }: PostsDataTypes) {
   return (
-    <li role="listitem" className="mt-6 first:mt-0 basis-full relative">
+    <li role="listitem" className="relative mt-6 basis-full first:mt-0">
       <Link
         href={`blog/${slug}`}
-        className="bg-[#FFFFFF] flex flex-col h-full rounded-xl overflow-hidden relative w-full z-0"
+        className="relative z-0 flex h-full w-full flex-col overflow-hidden rounded-xl bg-[#FFFFFF]"
       >
-        <div className="block basis-auto grow-0 pt-[56.25%] shrink-[1] w-full relative">
+        <div className="relative block w-full shrink-[1] grow-0 basis-auto pt-[56.25%]">
           <div
             style={{
               backgroundImage: `url(${img})`,
             }}
-            className="block h-full left-0 absolute top-0 w-full z-0 bg-scroll bg-clip-border bg-[50%_0%] bg-no-repeat bg-cover"
+            className="absolute left-0 top-0 z-0 block h-full w-full bg-cover bg-scroll bg-clip-border bg-[50%_0%] bg-no-repeat"
           />
         </div>
         <div className="flex flex-col justify-between p-6">
-          <div className="font-bold uppercase text-xs leading-4 mb-2">
+          <div className="mb-2 text-xs font-bold uppercase leading-4">
             {categories}
           </div>
-          <h2 className="w-full text-[#1B1B1F] text-[19px] font-bold leading-[23px]">
+          <h2 className="w-full text-[19px] font-bold leading-[23px] text-[#1B1B1F]">
             {title}
           </h2>
-          <div className="text-sm font-semibold text-[#6e6e73] mt-2 leading-[18px]">
+          <div className="mt-2 text-sm font-semibold leading-[18px] text-[#6e6e73]">
             <Date dateString={date} />
           </div>
         </div>

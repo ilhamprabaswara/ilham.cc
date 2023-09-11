@@ -47,8 +47,8 @@ export default function StravaPopUp() {
   return (
     <>
       {cardId && currentActivity && (
-        <div className="fixed flex items-center justify-center top-0 left-0 w-screen h-screen bg-secondary60 bg-opacity-50 z-[9999] overflow-hidden">
-          <div className="relative w-96 bg-[#FFFFFF] animate-[append-animate_.2s_linear]">
+        <div className="bg-secondary60 fixed top-0 left-0 z-[9999] flex h-screen w-screen items-center justify-center overflow-hidden bg-opacity-50">
+          <div className="relative w-96 animate-[append-animate_.2s_linear] bg-[#FFFFFF]">
             <button onClick={removeQuery}>Close</button>
             <h1 className=" text-[#212121]">{currentActivity.name}</h1>
             {/* <Map

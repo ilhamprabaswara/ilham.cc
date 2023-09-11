@@ -1,7 +1,7 @@
-import BlogList from "@/components/pages/blog/blogList";
-import Layout from "@/components/layout";
-import { getSortedPostsData } from "@/lib/posts";
-import BlogSection from "@/components/pages/home/blogSection";
+import BlogList from '@/components/pages/blog/blogList';
+import Layout from '@/components/layout';
+import { getSortedPostsData } from '@/lib/posts';
+import BlogSection from '@/components/pages/home/blogSection';
 
 export default function Blog({
   allPostsData,

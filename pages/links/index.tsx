@@ -1,12 +1,12 @@
-import Layout from "@/components/layout";
-import Link from "next/link";
+import Layout from '@/components/layout';
+import Link from 'next/link';
 
 export default function Links() {
   return (
     <Layout>
-      <div className="grid grid-cols-1 gap-2.5 max-w-lg mx-auto font-[Montserrat]">
+      <div className="mx-auto grid max-w-lg grid-cols-1 gap-2.5">
         <Link href="https://linkedin.com/in/ilhamprabaswara">
-          <div className="flex items-center justify-center h-[75px] px-[20px] rounded relative bg-[#2867B2]">
+          <div className="relative flex h-[75px] items-center justify-center rounded bg-[#2867B2] px-[20px]">
             <div className="absolute left-5">
               <svg
                 width="45"
@@ -25,7 +25,7 @@ export default function Links() {
           </div>
         </Link>
         <Link href="https://github.com/IlhamPrabaswara">
-          <div className="flex items-center justify-center h-[75px] px-[20px] rounded relative bg-black">
+          <div className="relative flex h-[75px] items-center justify-center rounded bg-black px-[20px]">
             <div className="absolute left-5">
               <svg
                 width="45"
