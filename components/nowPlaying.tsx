@@ -1,19 +1,19 @@
-import Link from "next/link";
-import useSWR from "swr";
+import Link from 'next/link';
+import useSWR from 'swr';
 
 export default function NowPlaying() {
   const fetcher = (url) => fetch(url).then((r) => r.json());
-  const { data: nowPlaying } = useSWR("/api/now-playing", fetcher);
-  const { data: recentlyPlayed } = useSWR("/api/recently-played", fetcher);
+  const { data: nowPlaying } = useSWR('/api/now-playing', fetcher);
+  const { data: recentlyPlayed } = useSWR('/api/recently-played', fetcher);
   const checkPlay = () => {
     if (recentlyPlayed === undefined) {
-      return "Undefined";
+      return 'Undefined';
     } else {
       return recentlyPlayed;
     }
   };
   return (
-    <div className="block max-w-xs p-6 bg-white border border-gray-200 rounded-lg shadow">
+    <div className="block max-w-xs rounded-lg border border-gray-200 bg-white p-6 shadow">
       <div className="mb-16">
         <svg
           width="68"
@@ -29,7 +29,7 @@ export default function NowPlaying() {
         </svg>
       </div>
 
-      <div className="flex gap-2 mb-3">
+      <div className="mb-3 flex gap-2">
         {nowPlaying?.isPlaying ? (
           <div className="flex gap-[5px]">
             <div className="wave0" />
@@ -38,13 +38,13 @@ export default function NowPlaying() {
           </div>
         ) : null}
         <h1 className="text-green-500">
-          {nowPlaying?.isPlaying ? "Now Playing" : "Offline. Last Played"}
+          {nowPlaying?.isPlaying ? 'Now Playing' : 'Offline. Last Played'}
         </h1>
       </div>
       <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">
         {nowPlaying?.isPlaying ? (
           <Link
-            className="hover:text-[#1ed760] transition"
+            className="transition hover:text-[#1ed760]"
             href={nowPlaying.songUrl}
           >
             {nowPlaying.title}

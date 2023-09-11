@@ -1,13 +1,13 @@
-import Layout from "@/components/layout";
-import { getAllPostSlugs, getPostData } from "@/lib/posts";
-import Date from "@/components/date";
+import Layout from '@/components/layout';
+import { getAllPostSlugs, getPostData } from '@/lib/posts';
+import Date from '@/components/date';
 
 export default function Post({ postData }) {
   return (
     <Layout>
       <article className="prose">
-        <h1 className="font-medium mb-[10px] text-[22px]">{postData.title}</h1>
-        <div className="font-medium tracking-[1px] text-[11px] text-slate-400 uppercase">
+        <h1 className="mb-[10px] text-[22px] font-medium">{postData.title}</h1>
+        <div className="text-[11px] font-medium uppercase tracking-[1px] text-slate-400">
           <Date dateString={postData.date} />
         </div>
         <figure>
