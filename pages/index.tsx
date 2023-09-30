@@ -3,6 +3,7 @@ import { getSortedPostsData } from '@/lib/posts';
 import BlogList from '@/components/pages/blog/blogList';
 import HeroSection from '@/components/pages/home/heroSection';
 import BlogSection from '@/components/pages/home/blogSection';
+import { PostsDataTypes } from '@/interfaces/postData.d';
 
 export default function Home({
   allPostsData,
