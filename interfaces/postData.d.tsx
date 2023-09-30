@@ -1,4 +1,4 @@
-interface PostsDataTypes {
+export interface PostsDataTypes {
   categories: string;
   date: string;
   img: string;

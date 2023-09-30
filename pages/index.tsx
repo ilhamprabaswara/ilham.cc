@@ -1,8 +1,8 @@
-import Layout from "@/components/layout";
-import { getSortedPostsData } from "@/lib/posts";
-import BlogList from "@/components/pages/blog/blogList";
-import HeroSection from "@/components/pages/home/heroSection";
-import BlogSection from "@/components/pages/home/blogSection";
+import Layout from '@/components/layout';
+import { getSortedPostsData } from '@/lib/posts';
+import BlogList from '@/components/pages/blog/blogList';
+import HeroSection from '@/components/pages/home/heroSection';
+import BlogSection from '@/components/pages/home/blogSection';
 
 export default function Home({
   allPostsData,
@@ -13,7 +13,7 @@ export default function Home({
   return (
     <>
       <Layout>
-        <main className="w-full mx-auto pb-10">
+        <main className="mx-auto w-full">
           <HeroSection />
           <BlogSection>
             {allPostsData.map(({ categories, date, img, slug, title }) => (
