@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Footer from './footer';
 import NavBar from './navbar';
 import React from 'react';
+import DarkModeToggle from './ui/toggleDarkButton';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,7 +14,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" href="/img/favicon.ico" />
       </Head>
       <NavBar />
-      <div className="mx-auto w-[87.5%] max-w-[980px]">{children}</div>
+      <div className="mx-auto w-[91.1%] max-w-[1128px] md:w-[94.69%]">
+        {children}
+      </div>
+      <div className="fixed bottom-5 right-5">
+        <DarkModeToggle />
+      </div>
       <Footer />
     </>
   );

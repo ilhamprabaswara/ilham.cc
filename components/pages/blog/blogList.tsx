@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Date from '../../date';
+import { PostsDataTypes } from '@/interfaces/postData.d';
 export default function BlogList({
   categories,
   date,
@@ -8,10 +9,10 @@ export default function BlogList({
   title,
 }: PostsDataTypes) {
   return (
-    <li role="listitem" className="relative mt-6 basis-full first:mt-0">
+    <li role="listitem" className="relative h-full first:mt-0">
       <Link
         href={`blog/${slug}`}
-        className="relative z-0 flex h-full w-full flex-col overflow-hidden rounded-xl bg-[#FFFFFF]"
+        className="relative z-0 flex h-full w-full flex-col overflow-hidden rounded-xl bg-sys-light-surface-container dark:bg-sys-dark-surface-container"
       >
         <div className="relative block w-full shrink-[1] grow-0 basis-auto pt-[56.25%]">
           <div
@@ -21,14 +22,16 @@ export default function BlogList({
             className="absolute left-0 top-0 z-0 block h-full w-full bg-cover bg-scroll bg-clip-border bg-[50%_0%] bg-no-repeat"
           />
         </div>
-        <div className="flex flex-col justify-between p-6">
-          <div className="mb-2 text-xs font-bold uppercase leading-4">
-            {categories}
+        <div className="flex h-full flex-col justify-between p-6">
+          <div>
+            <div className="mb-2 text-body-sm font-bold uppercase leading-4 tracking-wide text-sys-light-on-surface-variant dark:text-sys-dark-on-surface-variant">
+              {categories}
+            </div>
+            <h2 className="w-full text-[19px] font-bold leading-[23px] text-sys-light-on-surface dark:text-sys-dark-on-surface">
+              {title}
+            </h2>
           </div>
-          <h2 className="w-full text-[19px] font-bold leading-[23px] text-[#1B1B1F]">
-            {title}
-          </h2>
-          <div className="mt-2 text-sm font-semibold leading-[18px] text-[#6e6e73]">
+          <div className="mt-2 text-sm font-semibold leading-[18px] text-sys-light-on-surface-variant dark:text-sys-dark-on-surface-variant">
             <Date dateString={date} />
           </div>
         </div>
