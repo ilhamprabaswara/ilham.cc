@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Date from '../../date';
 import { PostsDataTypes } from '@/interfaces/postData.d';
+import { useEffect, useRef } from 'react';
 export default function BlogList({
   categories,
   date,
@@ -8,8 +9,34 @@ export default function BlogList({
   slug,
   title,
 }: PostsDataTypes) {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-up');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(cardRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <li role="listitem" className="relative h-full first:mt-0">
+    <li
+      role="listitem"
+      ref={cardRef}
+      className="blog-card relative h-full first:mt-0"
+    >
       <Link
         href={`blog/${slug}`}
         className="relative z-0 flex h-full w-full flex-col overflow-hidden rounded-xl bg-sys-light-surface-container dark:bg-sys-dark-surface-container"
