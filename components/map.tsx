@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import React, { useRef, useEffect } from 'react';
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiaWxoYW1wIiwiYSI6ImNsZW9nbnE3bjAyNzczem81OXJxdjZxdWIifQ.0gPq9r5_gN65kaxtndN2dA";
+  'pk.eyJ1IjoiaWxoYW1wIiwiYSI6ImNsZW9nbnE3bjAyNzczem81OXJxdjZxdWIifQ.0gPq9r5_gN65kaxtndN2dA';
 
 const Map = (props) => {
   const mapContainerRef = useRef(null);
@@ -12,11 +12,11 @@ const Map = (props) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: 'mapbox://styles/mapbox/streets-v12',
       interactive: false,
     });
 
-    map.on("load", () => {
+    map.on('load', () => {
       // map.addSource('route', {
       //     'type': 'geojson',
       //     'data': {
@@ -30,34 +30,34 @@ const Map = (props) => {
       // });
 
       const geojson = {
-        type: "FeatureCollection",
+        type: 'FeatureCollection',
         features: [
           {
-            type: "Feature",
+            type: 'Feature',
             geometry: {
-              type: "LineString",
+              type: 'LineString',
               properties: {},
               coordinates: props.coordinate,
             },
           },
         ],
       };
-      map.addSource("route", {
-        type: "geojson",
+      map.addSource('route', {
+        type: 'geojson',
         data: geojson,
       });
 
       map.addLayer({
-        id: "route",
-        type: "line",
-        source: "route",
+        id: 'route',
+        type: 'line',
+        source: 'route',
         layout: {
-          "line-join": "round",
-          "line-cap": "round",
+          'line-join': 'round',
+          'line-cap': 'round',
         },
         paint: {
-          "line-color": "#fc4c02",
-          "line-width": 3,
+          'line-color': '#fc4c02',
+          'line-width': 3,
         },
       });
 
