@@ -1,5 +1,8 @@
+'use client'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import { useEffect, useRef } from 'react'
+import './styles.css'
 
 interface BlogCardTypes {
   category: string
@@ -13,9 +16,33 @@ export const BlogCard = ({
   date,
   imageSrc,
 }: BlogCardTypes) => {
+  const cardRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-up')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
   return (
     <Link
-      className="group flex flex-col overflow-hidden rounded-2xl border border-sys-light-outline transition-all duration-[400ms] hover:bg-[#6750A414]"
+      ref={cardRef}
+      className={`blog-card group flex h-full flex-col overflow-hidden rounded-2xl border border-sys-light-outline transition-all duration-[400ms] hover:bg-[#6750A414]`}
       href={'#'}
     >
       <div className="h-[180px] md:h-[150px] xl:h-[200px]">

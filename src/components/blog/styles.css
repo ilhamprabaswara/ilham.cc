@@ -1,0 +1,12 @@
+.blog-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1s,
+    transform 1s;
+}
+
+.blog-card.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
