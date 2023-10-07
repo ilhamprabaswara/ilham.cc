@@ -1,7 +1,7 @@
 import Link from 'next/link'
 export const Footer = () => {
   return (
-    <div className="text-center text-body-sm">
+    <div className="py-[30px] text-center text-body-base xl:py-10">
       ©2023{' '}
       <Link className="font-bold" href={'#'}>
         Ilham
