@@ -1,7 +1,7 @@
 import Link from 'next/link'
 export const NavBar = () => {
   return (
-    <div className="py-[10px] px-4 md:py-5 md:px-6 xl:py-10 xl:px-0">
+    <div className="px-4 py-[10px] md:px-6 md:py-5 xl:px-0 xl:py-10">
       <Link className="font-poppins text-headline-sm font-semibold" href={'/'}>
         Ilham
       </Link>
