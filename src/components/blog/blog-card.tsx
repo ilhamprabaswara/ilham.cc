@@ -3,19 +3,15 @@ import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import './styles.css'
+import Date from '@/utils/date'
 
-interface BlogCardTypes {
-  category: string
-  title: string
-  date: string
-  imageSrc: StaticImageData
-}
 export const BlogCard = ({
   category,
   title,
   date,
   imageSrc,
-}: BlogCardTypes) => {
+  slug,
+}: BlogDataInterface) => {
   const cardRef = useRef(null)
 
   useEffect(() => {
@@ -28,7 +24,7 @@ export const BlogCard = ({
           }
         })
       },
-      { threshold: 0.2 }
+      { threshold: 0 }
     )
 
     if (cardRef.current) {
@@ -42,8 +38,8 @@ export const BlogCard = ({
   return (
     <Link
       ref={cardRef}
-      className={`blog-card group flex h-full flex-col overflow-hidden rounded-2xl border border-sys-light-outline transition-all duration-[400ms] hover:bg-[#6750A414]`}
-      href={'#'}
+      className="blog-card group flex h-full flex-col overflow-hidden rounded-2xl border border-sys-light-outline transition-all duration-[400ms] hover:bg-[#6750A414]"
+      href={`/blog/${slug}`}
     >
       <div className="h-[180px] md:h-[150px] xl:h-[200px]">
         <div className="h-full overflow-clip">
@@ -59,7 +55,9 @@ export const BlogCard = ({
           <div className="mb-2 text-label-base uppercase">{category}</div>
           <div className="text-title-lg">{title}</div>
         </div>
-        <div className="mt-2 font-semibold">{date}</div>
+        <div className="mt-2 font-semibold">
+          <Date dateString={date} />
+        </div>
       </div>
     </Link>
   )

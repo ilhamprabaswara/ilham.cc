@@ -1,12 +1,12 @@
 import { BlogList } from '@/components/blog/blog-list'
+import { getSortedPostsData } from '@/lib/posts'
 
 export default function Blog() {
+  const posts = getSortedPostsData()
   return (
     <>
       <div className="mx-auto grid max-w-[1128px] gap-6">
-        <BlogList />
-        <BlogList />
-        <BlogList />
+        <BlogList data={posts} />
       </div>
     </>
   )
