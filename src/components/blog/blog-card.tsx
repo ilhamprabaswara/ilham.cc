@@ -9,7 +9,7 @@ export const BlogCard = ({
   category,
   title,
   date,
-  imageSrc,
+  image,
   slug,
 }: BlogDataInterface) => {
   const cardRef = useRef(null)
@@ -45,8 +45,10 @@ export const BlogCard = ({
         <div className="h-full overflow-clip">
           <Image
             className="h-full object-cover transition-all duration-[400ms] group-hover:scale-[1.03]"
-            src={imageSrc}
+            src={image}
             alt="card-image"
+            width={500}
+            height={500}
           />
         </div>
       </div>

@@ -2,9 +2,8 @@
 title: 'My NextJS-Powered Website'
 date: '2023-10-08'
 category: 'Technology'
+image: '/images/house.webp'
 ---
-
-# Unleashing the Future: My NextJS-Powered Website
 
 In the ever-evolving landscape of web development, choosing the right technology stack can make all the difference. After careful consideration and extensive research, I am thrilled to introduce my brand-new website, powered by NextJS. This cutting-edge framework has not only transformed my development experience but promises an unparalleled user experience for visitors.
 
