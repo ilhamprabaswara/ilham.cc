@@ -1,7 +1,7 @@
 interface BlogDataInterface {
   category: string
   date: string
-  imageSrc: StaticImageData
+  image: string
   slug: string
   title: string
 }

@@ -1,6 +1,7 @@
 import { getPostData, getSortedPostsData } from '@/lib/posts'
 import Date from '@/utils/date'
 import { Metadata, ResolvingMetadata } from 'next'
+import Image from 'next/image'
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
@@ -18,17 +19,29 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const postData: any = await getPostData(slug)
   return (
     <div className="mx-auto mt-[10px] max-w-[1128px] md:mt-5">
-      <article className="prose dark:prose-invert">
-        <header className="mb-[25px]">
-          <h1 className="mb-[10px] text-[22px] font-medium">
+      <article className="prose dark:prose-headings:text-sys-dark-on-background dark:prose-p:text-sys-dark-on-surface-variant prose-headings:text-sys-light-on-background prose-p:text-sys-light-on-surface-variant max-w-none">
+        <header className="mx-auto mb-[25px] max-w-[653px]">
+          <h1 className="mb-5 text-[22px] text-headline-lg font-bold">
             {postData.title}
           </h1>
-          <div className="text-[11px] font-medium uppercase tracking-[1px] text-slate-400">
+          <div className="text-[11px] font-medium uppercase tracking-[1px] dark:text-sys-dark-on-surface">
             <Date dateString={postData.date} />
           </div>
+          <div className="text-[11px] font-medium uppercase tracking-[1px] dark:text-sys-dark-on-surface">
+            {postData.category}
+          </div>
         </header>
+        <div className="mb-[25px] h-[600px] w-full">
+          <Image
+            className="h-full rounded-xl object-cover"
+            src={postData.image}
+            alt="blog-image"
+            width={1128}
+            height={600}
+          />
+        </div>
         <div
-          className="text-sm leading-[1.6em]"
+          className="mx-auto max-w-[653px] text-sm leading-[1.6em]"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
       </article>
