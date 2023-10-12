@@ -44,7 +44,7 @@ export const BlogCard = ({
       <div className="h-[180px] md:h-[150px] xl:h-[200px]">
         <div className="h-full overflow-clip">
           <Image
-            className="h-full object-cover transition-all duration-[400ms] group-hover:scale-[1.03]"
+            className="h-full w-full object-cover transition-all duration-[400ms] group-hover:scale-[1.03]"
             src={image}
             alt="card-image"
             width={500}
