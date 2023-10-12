@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const postData: any = await getPostData(slug)
   return (
     <div className="mx-auto mt-[10px] max-w-[1128px] md:mt-5">
-      <article className="prose dark:prose-headings:text-sys-dark-on-background dark:prose-p:text-sys-dark-on-surface-variant prose-headings:text-sys-light-on-background prose-p:text-sys-light-on-surface-variant max-w-none">
+      <article className="prose max-w-none prose-headings:text-sys-light-on-background prose-p:text-sys-light-on-surface-variant dark:prose-headings:text-sys-dark-on-background dark:prose-p:text-sys-dark-on-surface-variant">
         <header className="mx-auto mb-[25px] max-w-[653px]">
           <h1 className="mb-5 text-[22px] text-headline-lg font-bold">
             {postData.title}
@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {postData.category}
           </div>
         </header>
-        <div className="mb-[25px] h-[600px] w-full">
+        <div className="mb-[25px] h-[200px] w-full md:h-[350px] lg:h-[600px]">
           <Image
             className="h-full rounded-xl object-cover"
             src={postData.image}
