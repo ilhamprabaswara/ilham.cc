@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch",
+    "test-coverage": "jest --collect-coverage"
   },
   "dependencies": {
     "@types/jest": "^29.5.5",
@@ -23,6 +25,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
