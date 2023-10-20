@@ -1,21 +1,33 @@
 import { render, screen } from '@testing-library/react'
 import { BlogCard } from '../blog-card'
 
-describe('true is truthy and false is falsy', () => {
-  it('true is truthy', () => {
+describe('Check blog card', () => {
+  beforeEach(() => {
+    // IntersectionObserver isn't available in test environment
+    const mockIntersectionObserver = jest.fn()
+    mockIntersectionObserver.mockReturnValue({
+      observe: () => null,
+      unobserve: () => null,
+      disconnect: () => null,
+    })
+    window.IntersectionObserver = mockIntersectionObserver
+  })
+  it('Check card header', () => {
     render(
       <BlogCard
-        category="Check"
+        category="Technology"
         date="2020-02-02"
         image="/images/house.webp"
         slug="/cek"
-        title="cek"
+        title="Sample Title"
       />
     )
-    const heading = screen.getByRole('heading', { level: 1 })
-  })
+    const cardImg = screen.getByRole('img', { name: 'card-image' })
+    const cardCategory = screen.getByRole('link', { name: /card-image/i })
+    // const category = screen.getByRole('link', { name: 'card-image' })
 
-  it('false is falsy', () => {
-    expect(false).toBe(false)
+    expect(cardImg).toBeInTheDocument()
+    expect(cardCategory).toBeInTheDocument()
+    expect(screen.getByText('Sample Title')).toBeVisible()
   })
 })
