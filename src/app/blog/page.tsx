@@ -5,7 +5,7 @@ export default function Blog() {
   const posts = getSortedPostsData()
   return (
     <>
-      <div className="mx-auto grid max-w-[1128px] gap-6">
+      <div className="mx-auto mt-[30px] grid max-w-[1128px] gap-6">
         <BlogList data={posts} />
       </div>
     </>
