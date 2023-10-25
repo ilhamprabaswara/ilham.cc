@@ -1,3 +1,4 @@
+import TableOfContent from '@/components/blog/table-of-content'
 import { getPostData, getSortedPostsData } from '@/lib/posts'
 import Date from '@/utils/date'
 import { Metadata, ResolvingMetadata } from 'next'
@@ -18,7 +19,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   const postData: any = await getPostData(slug)
   return (
-    <div className="mx-auto mt-[10px] max-w-[1128px] md:mt-5">
+    <div className="mx-auto mt-[10px] flex max-w-[1128px] md:mt-5">
       <article className="prose max-w-none prose-headings:text-sys-light-on-background prose-p:text-sys-light-on-surface-variant dark:prose-headings:text-sys-dark-on-background dark:prose-p:text-sys-dark-on-surface-variant">
         <header className="mx-auto mb-[25px] max-w-[653px]">
           <h1 className="mb-5 text-[22px] text-headline-lg font-bold">
@@ -41,10 +42,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
           />
         </div>
         <div
-          className="mx-auto max-w-[653px] text-sm leading-[1.6em]"
+          className="mdx mx-auto max-w-[653px] text-sm leading-[1.6em]"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
       </article>
+      <div className="sticky top-2 h-fit">
+        <TableOfContent slug={slug} />
+      </div>
     </div>
   )
 }
