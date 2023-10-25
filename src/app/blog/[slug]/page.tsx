@@ -41,14 +41,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
             height={600}
           />
         </div>
-        <div
-          className="mdx mx-auto max-w-[653px] text-sm leading-[1.6em]"
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-        />
+        <div className="flex gap-2">
+          <div
+            className="mdx max-w-[700px] text-sm leading-[1.6em]"
+            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+          />
+          <div className="not-prose sticky top-2 h-fit">
+            <TableOfContent slug={slug} />
+          </div>
+        </div>
       </article>
-      <div className="sticky top-2 h-fit">
-        <TableOfContent slug={slug} />
-      </div>
     </div>
   )
 }
