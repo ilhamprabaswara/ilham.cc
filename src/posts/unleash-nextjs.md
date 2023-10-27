@@ -1,7 +1,7 @@
 ---
 title: 'My NextJS-Powered Website'
 date: '2023-10-08'
-category: 'Technology'
+category: 'Next.js'
 image: '/images/house.webp'
 ---
 
