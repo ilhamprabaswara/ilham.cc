@@ -11,7 +11,7 @@ export const BlogCard = ({
   date,
   image,
   slug,
-}: BlogDataInterface) => {
+}: BlogPostInterface) => {
   const cardRef = useRef(null)
 
   useEffect(() => {
