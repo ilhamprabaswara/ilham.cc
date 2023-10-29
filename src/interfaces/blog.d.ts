@@ -1,4 +1,4 @@
-interface BlogDataInterface {
+interface BlogPostInterface {
   category: string
   date: string
   image: string

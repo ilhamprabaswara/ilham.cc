@@ -13,7 +13,6 @@ const TableOfContent = ({ slug }: { slug: string }) => {
     ) ?? 0
   useEffect(() => {
     const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3')
-    console.log(headings)
     const headingArr: any = []
     headings.forEach((heading) => {
       const id = heading.id
