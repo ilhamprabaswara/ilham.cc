@@ -46,9 +46,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             className="mdx max-w-[700px] text-sm leading-[1.6em]"
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
-          <div className="not-prose sticky top-2 h-fit">
+          {/* <div className="not-prose sticky top-2 h-fit">
             <TableOfContent slug={slug} />
-          </div>
+          </div> */}
         </div>
       </article>
     </div>
