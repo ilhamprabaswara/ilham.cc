@@ -42,17 +42,14 @@ export const BlogCard = ({
       className="blog-card group flex h-full flex-col overflow-hidden rounded-2xl border border-sys-light-outline transition-all duration-[400ms] hover:bg-[#6750A414]"
       href={`/blog/${slug}`}
     >
-      <div className="h-[180px] md:h-[150px] xl:h-[200px]">
-        <div className="h-full overflow-clip">
-          <Image
-            priority={index === 0}
-            className="h-full w-full object-cover transition-all duration-[400ms] group-hover:scale-[1.03]"
-            src={image}
-            alt="card-image"
-            width={500}
-            height={500}
-          />
-        </div>
+      <div className="relative flex-[0_0_180px] overflow-clip md:flex-[0_0_150px] xl:flex-[0_0_200px]">
+        <Image
+          priority={index === 0}
+          className="object-cover transition-all duration-[400ms] group-hover:scale-[1.03]"
+          src={image}
+          alt="card-image"
+          fill
+        />
       </div>
       <div className="flex h-full flex-col justify-between p-6">
         <div className="font-bold">
