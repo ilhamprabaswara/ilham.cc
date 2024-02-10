@@ -1,5 +1,5 @@
 import Link from 'next/link'
-export const Footer = () => {
+const Footer = () => {
   return (
     <div className="py-[30px] text-center text-body-base xl:py-10">
       ©2023{' '}
@@ -10,3 +10,5 @@ export const Footer = () => {
     </div>
   )
 }
+
+export default Footer

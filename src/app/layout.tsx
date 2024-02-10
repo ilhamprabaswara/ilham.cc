@@ -1,9 +1,11 @@
-import { Footer, NavBar } from '@/components/layout'
+import { NavBar } from '@/components/layout/navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import dynamic from 'next/dynamic'
 
+const Footer = dynamic(() => import('@/components/layout/footer'))
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const poppins = Poppins({
   subsets: ['latin'],
