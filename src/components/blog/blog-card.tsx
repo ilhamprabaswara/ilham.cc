@@ -46,6 +46,7 @@ export const BlogCard = ({
         <Image
           priority={index === 0}
           className="object-cover transition-all duration-[400ms] group-hover:scale-[1.03]"
+          sizes="(max-width: 768px) 100vw, 33vw"
           src={image}
           alt="card-image"
           fill
