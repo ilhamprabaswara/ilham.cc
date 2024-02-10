@@ -4,7 +4,7 @@ export const BlogList = ({ data }: { data: BlogPostInterface[] }) => {
   return (
     <ul className="grid gap-6 md:grid-cols-3">
       {data?.map(
-        ({ slug, category, title, date, image }: BlogPostInterface) => {
+        ({ slug, category, title, date, image }: BlogPostInterface, index) => {
           return (
             <li key={slug} className="h-full">
               <BlogCard
@@ -13,6 +13,7 @@ export const BlogList = ({ data }: { data: BlogPostInterface[] }) => {
                 date={date}
                 image={image}
                 slug={slug}
+                index={index}
               />
             </li>
           )
