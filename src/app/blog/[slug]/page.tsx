@@ -34,6 +34,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </header>
         <div className="mb-[25px] h-[200px] w-full md:h-[350px] lg:h-[600px]">
           <Image
+            priority
             className="h-full rounded-xl object-cover"
             src={postData.image}
             alt="blog-image"
