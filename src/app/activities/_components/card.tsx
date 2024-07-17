@@ -27,6 +27,7 @@ const ActivityCard = ({ data }: { data: IStravaActivity }) => {
       return <Image alt="" src={'/images/wave.png'} fill />
     }
   }
+
   const ActivityCard = ({ sport_type }: any) => {
     const calculateRidingSpeed = (
       distanceInMeters: number,
@@ -38,6 +39,7 @@ const ActivityCard = ({ data }: { data: IStravaActivity }) => {
       const avgSpeed = distanceInKilometers / timeInHours
       return avgSpeed.toFixed(1) + ' km/h'
     }
+
     function calculateRunningPace(
       distanceInMeters: number,
       timeInSeconds: number
@@ -81,6 +83,7 @@ const ActivityCard = ({ data }: { data: IStravaActivity }) => {
 
       return formattedPace
     }
+
     const col2Label = (
       sport_type: 'Run' | 'Ride' | 'Walk' | 'VirtualRide' | 'Swim'
     ) => {
@@ -90,6 +93,7 @@ const ActivityCard = ({ data }: { data: IStravaActivity }) => {
         return 'Avg Pace'
       }
     }
+
     const col2Value = (
       sport_type: 'Run' | 'Ride' | 'Walk' | 'VirtualRide' | 'Swim',
       distance: number,
@@ -103,6 +107,7 @@ const ActivityCard = ({ data }: { data: IStravaActivity }) => {
         return calculateRidingSpeed(distance, moving_time)
       }
     }
+
     return (
       <div>
         <div className="relative h-[300px] w-full">
