@@ -1,6 +1,5 @@
 import { BlogList } from '@/components/blog/blog-list'
 import { Headline } from '@/components/landing/headline'
-import { ButtonOutline } from '@/components/ui/buttons'
 import { getSortedPostsData } from '@/lib/posts'
 import Link from 'next/link'
 
@@ -14,9 +13,9 @@ export default function Home() {
           Blog
         </h2>
         <BlogList data={posts} />
-        <ButtonOutline className="mt-[30px] rounded-full xl:mt-[40px]">
+        <div className="mt-[30px] rounded-full border border-sys-light-outline px-6 py-[10px] transition duration-[400ms] hover:bg-[#6750A414] xl:mt-[40px]">
           <Link href={'/blog'}>See all posts -&gt;</Link>
-        </ButtonOutline>
+        </div>
       </section>
     </>
   )
