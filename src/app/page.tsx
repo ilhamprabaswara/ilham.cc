@@ -13,9 +13,12 @@ export default function Home() {
           Blog
         </h2>
         <BlogList data={posts} />
-        <div className="mt-[30px] rounded-full border border-sys-light-outline px-6 py-[10px] transition duration-[400ms] hover:bg-[#6750A414] xl:mt-[40px]">
-          <Link href={'/blog'}>See all posts -&gt;</Link>
-        </div>
+        <Link
+          className="mt-[30px] inline-block rounded-full border border-sys-light-outline px-6 py-[10px] transition duration-[400ms] hover:bg-[#6750A414] xl:mt-[40px]"
+          href={'/blog'}
+        >
+          See all posts -&gt;
+        </Link>
       </section>
     </>
   )
